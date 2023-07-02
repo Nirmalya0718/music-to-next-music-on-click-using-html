@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one play another stop</title>
+</head>
+<body>
+    <button id="play" style="display: block;" >
+        change <br/> music
+    </button>
+    <audio controls autoplay="true" loop style="display: none;" id="play1">
+        <source src="./indian-oriental-tune-01-15252.mp3">
+    </audio>
+    <audio controls loop style="display: none;" id="play2">
+        <source src="./mischief-128476.mp3">
+    </audio>
+    <style>
+        button{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25%;
+            background-color: aquamarine;
+        }
+        button:hover{
+            background-color: chartreuse;
+            border-radius: 15px;
+        }
+    </style>
+    <script>
+        document.getElementById("play").onclick=function(){
+            var audio = document.getElementById("play1")
+            var audio1 = document.getElementById("play2")
+            if(audio1.paused ) {
+                audio.pause()
+                audio1.play()
+            } else {
+                audio1.pause()
+                audio.play()
+            }
+        }
+    </script>
+</body>
+</html>
